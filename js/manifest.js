@@ -1,0 +1,25 @@
+/* Orden de las diapositivas. */
+window.DECK_MANIFEST = [
+  "portada.html",
+  "ponente.html",
+  "idea-desarrollar.html",
+  "extraccion.html",
+  "arquitectura.html",
+  "crear-panel.html",
+  "panel.html",
+  "preguntar-sugerir-ordenar.html",
+  "crear-cuadernos.html",
+  "investigar-glucemias.html",
+  "informe-glucemias-complejidad.html",
+  "gemini-a-chatgpt.html",
+  "panel-pilar.html",
+  "csv.html",
+  "panel-jorge.html",
+  "tarea.html",
+  "aviso.html",
+  "futuro-datos.html",
+  "futuro-consulta.html",
+  "llamada-adriana.html",
+  "kit.html",
+  "gracias.html"
+];

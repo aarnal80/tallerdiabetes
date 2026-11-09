@@ -1,0 +1,39 @@
+<section class="slide congreso-plantilla" data-slide="tarea">
+<style>
+#s-tarea {padding:65px 85px;overflow:hidden;color:#142d40}
+#s-tarea h2 {font:400 67px/1.08 Georgia,serif;margin:14px 0 32px}
+#s-tarea .task-grid {display:grid;grid-template-columns:430px 1fr;gap:26px}
+#s-tarea .schedule {background:#142d40;color:#fff;border-radius:22px;padding:28px 32px}
+#s-tarea .schedule strong {display:block;font:400 102px/1 Georgia,serif;margin:17px 0}
+#s-tarea .schedule p {font:27px/1.3 var(--font);margin:0 0 14px}
+#s-tarea .days {display:flex;gap:9px}
+#s-tarea .days span {display:grid;place-items:center;width:56px;height:52px;border-radius:8px;background:#d9f4ee;color:#173743;font:700 25px var(--font)}
+#s-tarea .steps {display:grid;gap:13px}
+#s-tarea article {display:grid;grid-template-columns:58px 1fr;gap:18px;align-items:center;border:1px solid #dce5e8;border-radius:14px;background:#f2f6f7;padding:16px 22px}
+#s-tarea article .number {display:grid;place-items:center;border-radius:50%;height:52px;background:#d6eae9;color:#005d56;font:700 24px var(--font)}
+#s-tarea h3 {font:700 29px/1.15 var(--font);margin:0 0 5px}
+#s-tarea article p {font:25px/1.27 var(--font);margin:0}
+#s-tarea .prompt {margin-top:24px;padding:16px 24px;background:#f7eff2;border-left:6px solid #a6093d}
+#s-tarea .prompt ol {list-style:none;margin:0;padding:0}
+#s-tarea .prompt li {font:24px/1.35 var(--font)}
+#s-tarea .copy-prompt {margin-top:12px;padding:8px 15px;font:700 20px var(--font);border:1px solid #dca9bb;color:#7d072e;background:white;cursor:pointer}
+#s-tarea .copy-status {margin-left:12px;font:21px var(--font)}
+#s-tarea .note {font:20px/1.3 var(--font);color:#4b6273;margin-top:13px}
+#s-tarea .note a {color:inherit}
+</style>
+<div class="fill" id="s-tarea">
+<p class="kicker plain">ChatGPT · Tarea recurrente</p>
+<h2>Cada mañana, el Excel al día</h2>
+<div class="task-grid">
+<div class="schedule"><p>De lunes a viernes</p><strong>08:00</strong><p>Hora de Madrid</p><div class="days" aria-hidden="true"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span></div></div>
+<div class="steps">
+<article><span class="number" aria-hidden="true">1</span><div><h3>Revisa el correo</h3><p>Busca mensajes nuevos de pacientes y lee sus glucemias y adjuntos.</p></div></article>
+<article><span class="number" aria-hidden="true">2</span><div><h3>Actualiza el Excel con la skill</h3><p>Identifica al paciente, evita duplicados y verifica que se guardaron los cambios.</p></div></article>
+<article><span class="number" aria-hidden="true">3</span><div><h3>Manda un aviso si hay cambios</h3><p>Un único aviso con lo actualizado y lo que queda pendiente de revisar.</p></div></article>
+</div>
+</div>
+<div class="prompt"><ol><li>De lunes a viernes, a las 08:00 (hora de Madrid), revisa el buzón de prueba desde la última revisión. Aplica la skill de seguimiento y actualiza el Excel autorizado. Verifica el guardado y avísame solo si hay cambios o algo pendiente de revisar.</li></ol><button type="button" class="copy-prompt">Copiar prompt</button><span class="copy-status" role="status"></span></div>
+<p class="note">Demostración con datos sintéticos. Requiere correo conectado, acceso de escritura al Excel y avisos activados. <a href="https://learn.chatgpt.com/docs/automations" target="_blank" rel="noopener">Tareas programadas de ChatGPT</a></p>
+</div>
+<div class="congreso-pie" aria-hidden="true"><img src="assets/congreso/pie.png" alt=""></div>
+</section>

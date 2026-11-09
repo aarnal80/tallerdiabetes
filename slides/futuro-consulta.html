@@ -1,0 +1,51 @@
+<section class="slide" data-slide="futuro-consulta">
+<style>
+#s-futuro-consulta {padding:66px 96px;overflow:hidden;color:#142d40;background:var(--bg)}
+#s-futuro-consulta .kicker {color:#a6093d}
+#s-futuro-consulta h2 {color:#142d40;font:400 72px/1.08 Georgia,serif;letter-spacing:-.025em;margin:16px 0 12px}
+#s-futuro-consulta .lead {font:29px/1.3 var(--font);color:#4b6273;margin:0}
+#s-futuro-consulta .map {position:relative;margin-top:45px}
+#s-futuro-consulta svg {position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#s-futuro-consulta .trace {fill:none;stroke:#a6093d;stroke-width:3.5;stroke-linecap:round}
+#s-futuro-consulta .node {position:relative;background:#f2f6f7;border:1px solid #cbdbe1;border-radius:17px;padding:22px 26px}
+#s-futuro-consulta .tag {display:block;color:#7d072e;font:700 19px/1.15 var(--font);letter-spacing:.09em;text-transform:uppercase;margin:0 0 8px}
+#s-futuro-consulta h3 {color:#142d40;font:700 31px/1.13 var(--font);margin:0 0 8px}
+#s-futuro-consulta .node p {font:25px/1.3 var(--font);color:#354d5f;margin:0}
+#s-futuro-consulta .conclusion {border-top:1px solid #cbdbe1;padding-top:19px;margin-top:26px;font:26px/1.3 var(--font);color:#354d5f}
+@media (prefers-reduced-motion:no-preference) {
+ .slide.active #s-futuro-consulta .trace {animation:taller-trazo 1.45s cubic-bezier(.25,.7,.25,1) both;stroke-dasharray:1}
+ .slide.active #s-futuro-consulta .node {animation:taller-nodo .6s ease-out both;animation-delay:var(--entrada,0s)}
+}
+@keyframes taller-trazo {from {stroke-dashoffset:1;opacity:.2} to {stroke-dashoffset:0;opacity:1}}
+@keyframes taller-nodo {from {transform:translateY(10px);opacity:.6} to {transform:translateY(0);opacity:1}}
+#s-futuro-consulta .map {height:530px}
+#s-futuro-consulta .care-grid {position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-top:151px}
+#s-futuro-consulta .node {padding:30px;min-height:287px}
+#s-futuro-consulta .node:nth-child(2) {--entrada:.45s;border-color:#a6093d;background:#f7eff2}
+#s-futuro-consulta .node:nth-child(3) {--entrada:.85s}
+#s-futuro-consulta .tag {margin-bottom:14px}
+#s-futuro-consulta h3 {font-size:37px;margin-bottom:12px}
+#s-futuro-consulta .output {display:block;border-top:1px solid #e5cdd6;margin-top:20px;padding-top:14px;color:#7d072e;font:700 23px/1.25 var(--font)}
+#s-futuro-consulta .conclusion {margin-top:6px;font:italic 36px/1.2 Georgia,serif;color:#142d40}
+</style>
+<div class="fill" id="s-futuro-consulta">
+<p class="kicker plain">¿Qué viene ahora? · 2/2</p>
+<h2>La consulta empieza antes de la visita</h2>
+<p class="lead">Tres momentos para organizar la información y dar continuidad a la atención.</p>
+<div class="map">
+<svg viewBox="0 0 1728 530" aria-hidden="true">
+<defs><marker id="futuro-consulta-flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#a6093d"/></marker></defs>
+<path class="trace" pathLength="1" d="M110 72 H1618" marker-end="url(#futuro-consulta-flecha)"/>
+<path class="trace" pathLength="1" d="M277 72 V149 M864 72 V149 M1451 72 V149"/>
+<g fill="#ffffff" stroke="#a6093d" stroke-width="4"><circle cx="277" cy="72" r="28"/><circle cx="864" cy="72" r="28"/><circle cx="1451" cy="72" r="28"/></g>
+<g fill="#142d40" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700"><text x="277" y="80">1</text><text x="864" y="80">2</text><text x="1451" y="80">3</text></g>
+</svg>
+<div class="care-grid">
+<article class="node"><span class="tag">Antes · Preconsulta</span><h3>Llamar y escuchar</h3><p>Un agente puede preguntar por la evolución, recoger medidas recientes y anotar las dudas.</p><span class="output">Resumen para preparar la visita</span></article>
+<article class="node"><span class="tag">Durante · Consulta</span><h3>Revisar y decidir</h3><p>El profesional comprueba lo relevante, aclara lo pendiente y acuerda el plan con el paciente.</p><span class="output">Plan validado en consulta</span></article>
+<article class="node"><span class="tag">Después · Seguimiento</span><h3>Volver a contactar</h3><p>El agente puede recoger nuevas medidas y resumir los cambios y las dudas entre visitas.</p><span class="output">Novedades para la próxima revisión</span></article>
+</div>
+</div>
+<p class="conclusion">¿Qué parte de tu próxima consulta prepararías así?</p>
+</div>
+</section>

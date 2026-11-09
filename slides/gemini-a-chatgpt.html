@@ -1,0 +1,29 @@
+<section class="slide congreso-plantilla" data-slide="gemini-a-chatgpt">
+<style>
+#s-gemini-a-chatgpt {padding:74px 100px; color:var(--ink); overflow:hidden}
+#s-gemini-a-chatgpt h2 {font:400 70px/1.1 Georgia,serif; margin:20px 0 35px}
+#s-gemini-a-chatgpt .flow {display:grid; grid-template-columns:1fr 90px 1fr 90px 1fr; align-items:center; margin-bottom:36px}
+#s-gemini-a-chatgpt .stage {padding:26px 30px; border:1px solid var(--line); border-radius:16px; background:var(--bg-2); font:28px/1.3 var(--font)}
+#s-gemini-a-chatgpt .stage strong {display:block; font-size:33px; margin-bottom:6px}
+#s-gemini-a-chatgpt .stage:nth-child(3) {background:var(--accent-soft)}
+#s-gemini-a-chatgpt .arrow {text-align:center; font-size:47px; color:var(--accent)}
+#s-gemini-a-chatgpt .prompt {padding:28px 36px; background:var(--bg-2); border-left:6px solid var(--accent)}
+#s-gemini-a-chatgpt .prompt ol {list-style:none; padding:0}
+#s-gemini-a-chatgpt .prompt li {font:32px/1.4 var(--font)}
+#s-gemini-a-chatgpt .copy-prompt {margin-top:18px; padding:12px 20px; border:1px solid #e8b9c9; background:var(--accent-soft); color:var(--accent-ink); font:700 24px var(--font); cursor:pointer}
+#s-gemini-a-chatgpt .copy-status {margin-left:14px; font:23px var(--font)}
+</style>
+<div class="fill" id="s-gemini-a-chatgpt">
+<p class="kicker plain">Del informe al Excel</p>
+<h2>¿Cómo llevo esto a mis informes?</h2>
+<div class="flow">
+<div class="stage"><strong>Gemini</strong>Informe de investigación</div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="stage"><strong>ChatGPT</strong>Analiza el informe adjunto</div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="stage"><strong>Excel</strong>Un panel para cada paciente</div>
+</div>
+<div class="prompt"><ol><li>Adjunto el informe de Gemini sobre cómo interpretar las glucemias. Analízalo y dime cómo llevarlo a los informes de mis pacientes. Separa los datos de sensor de las mediciones capilares. Para cada caso, dime qué mostrar de un vistazo, cómo calcularlo y qué dejar pendiente si faltan datos. Propón un diseño que pueda implementar en mi Excel.</li></ol><button type="button" class="copy-prompt">Copiar prompt</button><span class="copy-status" role="status"></span></div>
+</div>
+<div class="congreso-pie" aria-hidden="true"><img src="assets/congreso/pie.png" alt=""></div>
+</section>
