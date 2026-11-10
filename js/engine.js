@@ -216,6 +216,47 @@
     });
   }
 
+  /* ---------- Reloj de la charla ---------- */
+  const talkClock = $("#talk-clock");
+  const clockSectors = $$("#talk-clock path");
+  const talkDurationMs = 20 * 60 * 1000;
+  const clockKey = "taller-diabetes:talk-started-at";
+  let talkStartedAt = 0;
+  let clockTick;
+
+  function renderTalkClock(spent) {
+    talkClock.hidden = false;
+    talkClock.dataset.phase = spent < 3 ? "green" : spent < 6 ? "yellow" : "red";
+    clockSectors.forEach((sector, i) => sector.classList.toggle("spent", i < spent));
+  }
+
+  function resetTalkClock() {
+    if (!talkClock) return;
+    clearTimeout(clockTick);
+    talkStartedAt = 0;
+    try { sessionStorage.removeItem(clockKey); } catch {}
+    renderTalkClock(0);
+  }
+
+  function updateTalkClock() {
+    if (!talkClock || !talkStartedAt) return;
+    clearTimeout(clockTick);
+    const elapsed = Math.max(0, Date.now() - talkStartedAt);
+    const spent = Math.min(clockSectors.length, Math.floor(elapsed * clockSectors.length / talkDurationMs));
+    renderTalkClock(spent);
+    if (spent < clockSectors.length) {
+      const nextSectorAt = Math.ceil((spent + 1) * talkDurationMs / clockSectors.length);
+      clockTick = setTimeout(updateTalkClock, nextSectorAt - elapsed);
+    }
+  }
+
+  function startTalkClock() {
+    if (!talkClock || talkStartedAt) return;
+    talkStartedAt = Date.now();
+    try { sessionStorage.setItem(clockKey, String(talkStartedAt)); } catch {}
+    updateTalkClock();
+  }
+
   /* ---------- Navegación ---------- */
   function show(newIndex, dir, instant) {
     newIndex = Math.max(0, Math.min(Deck.slides.length - 1, newIndex));
@@ -238,6 +279,8 @@
     if (nh && nh.onEnter) { try { nh.onEnter(next); } catch (e) { console.error(e); } }
     applyStep(next, 0);
     updateChrome();
+    if (newIndex === 0) resetTalkClock();
+    else if (!instant && prevIndex === 0 && newIndex === 1) startTalkClock();
     moveCamera(prev && prev !== next ? prevIndex : null, newIndex, instant);
     Deck._emit("change", { index: newIndex, slide: next });
     if (location.hash !== "#" + (newIndex + 1)) history.replaceState(null, "", "#" + (newIndex + 1));
@@ -536,6 +579,13 @@
     // loader off
     const loader = $("#loader");
     if (loader) { loader.classList.add("done"); setTimeout(() => loader.remove(), 700); }
+    if (talkClock) {
+      try { talkStartedAt = Number(sessionStorage.getItem(clockKey)) || 0; } catch {}
+      updateTalkClock();
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) updateTalkClock();
+      });
+    }
     // primera slide (respeta hash), cámara colocada de golpe (sin viaje)
     const fromHash = parseInt((location.hash || "").replace("#", ""), 10);
     show(Number.isFinite(fromHash) && fromHash > 0 ? fromHash - 1 : 0, 1, true);
